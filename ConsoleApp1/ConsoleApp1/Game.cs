@@ -10,6 +10,47 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            Map map = new Map(8,5);
+
+
+            //Point point = new Point(4, 2);
+            //bool isOnMap = map.onMap(point);
+            //Console.WriteLine(isOnMap);
+
+            try
+            {
+               // MapLocation point2 = new MapLocation(8, 5, map);
+
+                Path path = new Path(
+                new[]
+                
+                {
+                    new MapLocation(0,2,map),
+                    new MapLocation(1,2,map),
+                    new MapLocation(2,2,map),
+                    new MapLocation(3,2,map),
+                    new MapLocation(4,2,map),
+                    new MapLocation(5,2,map),
+                    new MapLocation(6,2,map),
+                    new MapLocation(7,2,map)
+
+                });
+                MapLocation location = path.getLocationAt(0);
+                Console.WriteLine(location.X + "," + location.Y);
+            
+            }
+            catch(OutOfBoundsException ex) //bikin exception sendiri
+            {
+                Console.WriteLine(ex.Message); //message dilempar dari throw exception di MapLocation
+            }
+            catch (MDException ex)
+            {
+                Console.WriteLine("Exception level 2" +ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception level 3" +ex.Message);
+            }
         }
     }
 }
