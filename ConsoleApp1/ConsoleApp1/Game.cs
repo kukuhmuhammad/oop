@@ -35,8 +35,29 @@ namespace ConsoleApp1
                     new MapLocation(7,2,map)
 
                 });
-                MapLocation location = path.getLocationAt(0);
-                Console.WriteLine(location.X + "," + location.Y);
+                Invader[] invaders =
+                {
+                        new Invader(path),
+                        new Invader(path),
+                        new Invader(path),
+                        new Invader(path)
+                };
+
+                Tower[] towers =
+                {
+                    new Tower (new MapLocation(1,3,map)),
+                    new Tower (new MapLocation(1,3,map)),
+                    new Tower (new MapLocation(0,2,map))
+                };
+                Level level = new Level(invaders)
+                {
+                    Towers = towers
+                };
+
+                bool playerStatus = level.Play();
+                Console.WriteLine( "Player " +(playerStatus ? "won" : "lost"));
+                //MapLocation location = path.getLocationAt(0);
+                //Console.WriteLine(location.X + "," + location.Y);
             
             }
             catch(OutOfBoundsException ex) //bikin exception sendiri

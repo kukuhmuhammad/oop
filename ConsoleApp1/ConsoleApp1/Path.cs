@@ -9,6 +9,13 @@ namespace ConsoleApp1
     class Path
     {
         private readonly MapLocation[] _path; //kalo private pake underscore
+        public int length
+        {
+            get
+            {
+                return _path.Length;
+            }
+        }
 
         public Path(MapLocation[] path)
         {

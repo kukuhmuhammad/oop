@@ -29,6 +29,10 @@ namespace ConsoleApp1
 
             return (int)akar;
         }
+        public int distanceTo(Point point)//overloading
+        {
+            return distanceTo(point.X, point.Y);
+        }
  
     }
 }

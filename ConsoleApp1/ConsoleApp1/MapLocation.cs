@@ -13,6 +13,10 @@ namespace ConsoleApp1
           if (!map.onMap (this)) //apakah map ada dalam on map , this itu menunjuk ke point
                 throw new OutOfBoundsException("gada pointnya");
         }
+        public bool inRangeof(MapLocation mapLocation, int range)
+        {
+            return distanceTo(mapLocation) <= range;
+        }
 
     }
 }
